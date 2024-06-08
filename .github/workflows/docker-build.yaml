@@ -22,6 +22,6 @@ jobs:
       uses: docker/build-push-action@v5.3.0
       with:
         context: ./go
-        file: ./Dockerfile
+        file: Dockerfile
         push: true
         tags: devttao/go-hello-world:latest
