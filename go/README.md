@@ -2,8 +2,14 @@
 
 Source: [kubernetes-engine-samples/tree/main/quickstarts/hello-app](https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/tree/main/quickstarts/hello-app)
 
+```bash
+docker build -t devttao/hello-go .
+docker push devttao/hello-go:latest
 
-docker pull devttao/go-hello-world:latest
+docker tag devttao/hello-go:latest devttao/hello-go:v2.0
+docker push devttao/hello-go:v2.0
 
-docker run -it -p 9000:8080 devttao/go-hello-world:latest
+docker run -it -d -p 9000:8080 devttao/hello-go:v1.0
+curl localhost:9000
+```
 
